@@ -1,0 +1,408 @@
+
+body
+	{
+		font-family:calibri;
+		background:black;
+	}
+		/*styling the scroll bar */
+
+		::-webkit-scrollbar
+		{
+			width:2px;
+		}	
+		::-webkit-scrollbar-thumb
+		{
+			background:#ffac41;
+			border-radius:1px;
+		}
+		/*end of styling scroll bar */
+
+	/*RESPONSIVE NAV BAR */
+	@media screen and (max-width:749px)
+	{
+		#navbigscreen
+		{
+			display:none;
+		}
+		#navsmallscreen
+		{
+			display:block;
+		}
+	}
+	@media screen and (min-width:750px)
+	{
+		#navbigscreen
+		{
+			display:block;
+		}
+		#navsmallscreen
+		{
+			display:none;
+		}
+	}
+
+	/*RESPONSIVE PROFILE PHOTO*/
+	@media screen and (min-width:320px) and (max-width:374px)
+	{
+		#profileImage
+		{
+			height:210px;
+		}
+	}
+	@media screen and (min-width:375px) and (max-width:420px)
+	{
+		#profileImage
+		{
+			height:240px;
+		}
+	}
+	@media screen and (min-width:421px) and (max-width:500px)
+	{
+		#profileImage
+		{
+			height:265px;
+		}
+	}
+	@media screen and (min-width:501px) and (max-width:700px)
+	{
+		#profileImage
+		{
+			height:305px;
+		}
+	}
+	@media screen and (min-width:701px) and (max-width:830px)
+	{
+		#profileImage
+		{
+			height:380px;
+		}
+	}
+	@media screen and (min-width:831px) and (max-width:930px)
+	{
+		#profileImage
+		{
+			height:420px;
+		}
+	}
+	@media screen and (min-width:931px) and (max-width:1030px)
+	{
+		#profileImage
+		{
+			height:470px;
+		}
+	}
+	@media screen and (min-width:1031px) and (max-width:1240px)
+	{
+		#profileImage
+		{
+			height:490px;
+		}
+	}
+	@media screen and (min-width:1241px)
+	{
+		#profileImage
+		{
+			height:530px;
+		}
+	}
+
+
+	/*RESPONSIVE IMAGE TEXT*/
+	@media screen and (max-width:359px) and (min-width:320px)
+	{
+		.pfText
+		{
+			top:30%;
+			left:5%;
+		}
+	}
+	@media screen and (max-width:450px) and (min-width:360px)
+	{
+		.pfText
+		{
+			top:26%;
+			left:5%;
+		}
+	}
+	@media screen and (max-width:499px) and (min-width:451px)
+	{
+		.pfText
+		{
+			top:25.5%;
+			left:5%;
+		}
+	}
+	@media screen and (min-width:500px) and (max-width:530px)
+	{
+		.pfText
+		{
+			top:32%;
+			left:5%;
+		}
+	}
+	@media screen and (min-width:531px) and (max-width:699px)
+	{
+		.pfText
+		{
+			top:35%;
+			left:8%;
+		}
+	}
+	@media screen and (min-width:700px) and (max-width:829px)
+	{
+		.pfText
+		{
+			top:39%;
+			left:10%;
+		}
+	}
+	@media screen and (min-width:830px) and (max-width:929px)
+	{
+		.pfText
+		{
+			top:43%;
+			left:10%;
+		}
+	}
+	@media screen and (min-width:930px) and (max-width:932px)
+	{
+		.pfText
+		{
+			top:43%;
+			left:12%;
+		}
+	}
+	@media screen and (min-width:933px) and (max-width:1029px)
+	{
+		.pfText
+		{
+			top:46%;
+			left:12%;
+		}
+	}
+	@media screen and (min-width:1030px) and (max-width:1230px) 
+	{
+		.pfText
+		{
+			top:48%;
+			left:14%;
+		}
+	}
+	@media screen and (min-width:1231px)  
+	{
+		.pfText
+		{
+			top:50%;
+			left:16%;
+		}
+	}
+
+	/*RESPONSIVE ABOUT PROFILE*/
+	@media screen and (max-width:994px)
+	{
+		#aboutProfileSmallScreen
+		{
+			display:block;
+		}
+		#aboutProfileBigScreen
+		{
+			display:none;
+		}
+	}
+	@media screen and (min-width:995px)
+	{
+		#aboutProfileSmallScreen
+		{
+			display:none;
+		}
+		#aboutProfileBigScreen
+		{
+			display:block;
+		}
+	}
+
+	/* CARD HEADER RESPONSIVE SIZE */
+	@media screen and (max-width:765px) and (min-width:574px)
+	{
+		.card-head
+		{
+			font-size:28px;
+		}
+	}
+
+	@media screen and (min-width:766px) 
+	{
+		.card-head
+		{
+			font-size:34px;
+		}
+	}
+
+	@media screen and (min-width:200px) and (max-width:573px) 
+	{
+		.card-head
+		{
+			font-size:34px;
+		}
+	}
+
+	.navbar-toggler span:hover
+	{
+		color:white;
+	}
+
+	.navbar-brand
+	{
+		font-family: 'Berkshire Swash', cursive;
+		font-size:23px;
+	}
+
+	#navright
+	{
+		margin-right:7%;
+	}
+
+	.nav-item a
+	{
+		margin-left:9%;
+		color:white;
+	}
+	.nav-item a:hover
+	{
+		color:#ffac41;
+	}
+
+	.nav-item .active
+	{
+		color:#F85147;
+	}
+
+
+	.pfText
+	{
+		position:absolute;
+		transform:translateY(-50%);
+		color:white;
+		border-left:3px solid #F85147;
+		padding-left:5px;
+	}
+
+	.pfText #txt1
+	{
+		line-height:0.9;
+	}
+	.pfText #txt2
+	{
+		line-height:0.8;
+	}	
+
+	#txt1,#txt3
+	{
+		font-family: 'PT Serif', serif;
+	}
+	#txt2
+	{
+		font-family: 'Fredericka the Great', cursive;
+		color:#ffac41;
+
+	}
+	.round
+	{
+		width:10px;
+		height:10px;
+		border-radius:50%;
+		color:white;
+		background:white;
+		margin:2.6px;
+	}
+	#aboutHead
+	{
+		font-family: 'Berkshire Swash', cursive;
+		color:#ff1e56;
+	}
+
+	.round
+	{
+		background:#ff1e56;
+	}
+	
+	#aboutProfileSmallScreen i
+	{
+		position:relative;
+		top:5px;
+		right:2px;
+	}
+	#aboutProfileSmallScreen i:hover,.text-muted:hover
+	{
+		font-size:18px;
+		position:relative;
+		top:-0.3px;
+		transition-duration: 0.4s;
+		cursor:auto;
+	}
+
+
+
+	#aboutProfileBigScreen i
+		{
+			position:relative;
+			top:5px;
+			right:2px;
+		}
+
+	#aboutProfileBigScreen i:hover,.text-muted:hover
+	{
+		font-size:22px;
+		position:relative;
+		top:-0.3px;
+		transition-duration: 0.4s;
+		cursor:auto;
+	}
+
+	#aboutProfileSmallScreen p.text-secondary
+	{
+		font-weight:bold;
+	}
+	
+	.connectIcon
+	{
+		font-size:25px;
+	}
+
+	.card-deck
+	{
+		margin-top:50px;
+	}
+
+	.card
+	{
+		width:300px;
+	}
+
+	@media screen and (max-width:575px)
+	{
+		.card
+		{
+			margin-top:40px;
+		}
+	}
+
+	.cardicon
+	{
+		color:#f70039;
+	}
+
+	.card-text
+	{
+		font-size:21px;
+		color:aquamarine;
+		position:relative;
+		top:-20px;
+	}
+
+	.card-head
+	{
+		color:#7be57b;
+		position:relative;
+		top:-30px;
+	}

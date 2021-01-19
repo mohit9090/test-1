@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<title>Portfolio</title>
+<head>
+
+  <meta link-colorarset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Fredericka+the+Great&family=Londrina+Shadow&family=Nosifer&family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Marck+Script&family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+
+<!--<style type="text/css">
+
+</style>-->
+
+<!--SCRIPT FOR RESIZING NAME-->
+<script>
+	//ON LOADING
+	window.addEventListener('load',function(){
+		var width=window.innerWidth;
+		if(width>=725)
+		{
+			document.getElementById("txt2").classList.remove('display-4');
+			document.getElementById("txt2").classList.add('display-2');	
+			document.getElementsByClassName("pfText")[0].style.paddingLeft="13px";
+		}
+		else if(width<725)
+		{
+			document.getElementById("txt2").classList.remove('display-2');
+			document.getElementById("txt2").classList.add('display-4');
+			document.getElementsByClassName("pfText")[0].style.paddingLeft="5px";
+		}
+	})
+	//ON RESIZING
+	window.addEventListener('resize',function(){
+		var width=window.innerWidth;
+		if(width>=725)
+		{
+			document.getElementById("txt2").classList.remove('display-4');
+			document.getElementById("txt2").classList.add('display-2');
+			document.getElementsByClassName("pfText")[0].style.paddingLeft="13px";	
+		}
+		else if(width<725)
+		{
+			document.getElementById("txt2").classList.remove('display-2');
+			document.getElementById("txt2").classList.add('display-4');
+			document.getElementsByClassName("pfText")[0].style.paddingLeft="5px";
+		}
+	})
+</script>
+
+<!--SCRIPT FOR EVENTS CAUSED BY CLICKING NAV BUTTONS -->
+<script>
+	$(function(){
+		$(".nav-link").click(function(){
+			var option = $(this).html();
+			var optcheck=option.toLowerCase();
+			if(optcheck == "contact")
+			{
+				var pfContactPos=$("#pfContact").offset().top;
+				$("html,body").animate({scrollTop:pfContactPos},500);
+					
+			}
+			else if(optcheck == "portfolio")
+			{
+				if($(window).width()<=994)
+				{
+					var aboutHeadPos=$("#aboutHead").offset().top-260;
+					$("html,body").animate({scrollTop:aboutHeadPos},500);	
+				}
+				else if($(window).width()>994)
+				{
+					var aboutHeadPos=$("#aboutHead").offset().top-65;
+					$("html,body").animate({scrollTop:aboutHeadPos},500);
+				}
+				
+			}
+			else if(optcheck == "about")
+			{
+				if($(window).width()<=994)
+				{
+					var aboutHeadPos=$("#aboutHead").offset().top+330;
+					$("html,body").animate({scrollTop:aboutHeadPos},500);	
+				}
+				else if($(window).width()>994)
+				{
+					var aboutHeadPos=$("#aboutHead").offset().top+28;
+					$("html,body").animate({scrollTop:aboutHeadPos},500);
+				}
+			}
+			else if(optcheck == "services")
+			{
+				if($(window).width()<=994)
+				{
+					var pfServicePos=$("#pfService").offset().top-260;
+					$("html,body").animate({scrollTop:pfServicePos},500);	
+				}
+				else if($(window).width()>994)
+				{
+					var pfServicePos=$("#pfService").offset().top-60;
+					$("html,body").animate({scrollTop:pfServicePos},500);
+				}
+			}
+			else if(optcheck == "home")
+			{
+				var top=0;
+				$("html,body").animate({scrollTop:top},400);
+			}
+
+
+		})
+	});
+</script>
+
+</head>
+
+<body>
+
+	<!--NAV BAR FOR BIG SCREEN-->
+	<nav class="navbar navbar-expand-sm fixed-top" id="navbigscreen" style="background:#0f0909">
+		<div class="d-flex justify-content-between">
+			<div id="navleft" style="position:relative;left:8%">
+				<a class="navbar-brand"><span style="color:#F85147">Mohit</span> <span style="color:white">Kumar</span></a>
+			</div><!--navleft-->
+			<div id="navright">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a href="#" class="nav-link active">HOME</a></li>
+					<li class="nav-item"><a href="#" class="nav-link">ABOUT</a></li>
+					<li class="nav-item"><a href="#" class="nav-link">SERVICES</a></li>
+					<li class="nav-item"><a href="#" class="nav-link">PORTFOLIO</a></li>
+					<li class="nav-item"><a href="#" class="nav-link">CONTACT</a></li>
+				</ul>
+			</div><!--navright-->
+		</div><!--d-flex-->
+	</nav>
+
+	<!--NAV BAR FOR SMALL SCREEN-->
+	<nav class="navbar navbar-expand-md fixed-top" id="navsmallscreen" style="background:#0f0909">
+		<a class="navbar-brand" style="position:relative;left:9%;font-size:22px"><span style="color:#F85147">Mohit</span> <span style="color:white">Kumar</span></a>
+		<button class="navbar-toggler float-right" data-toggle="collapse" data-target="#hiddenNav" style="outline:none;position:relative;top:5px"><span class="fa fa-bars" style="color:#F85147;" onMouseOver="this.style.color='#f26b50'" onMouseOut="this.style.color='#F85147'"></button>
+		<div class="collapse navbar-collapse" id="hiddenNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a href="#" class="nav-link active">HOME</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">ABOUT</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">SERVICES</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">PORTFOLIO</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">CONTACT</a></li>
+			</ul>
+		</div><!--hiddenNav-->
+	</nav>
+
+	<div class="profile mt-5">
+		<img src='Me.jpg' id='profileImage' style="width:100%"/>
+		<div class='pfText' >
+			<h4 id="txt1" >HII. I AM</h4>
+			<h2 id="txt2" class="display-2">MOHIT</h2>
+			<h4 id="txt3" ><span style="color:#ff1e56;font-size:30px">W</span>EB <span style="color:#ff1e56;font-size:30px">D</span>EVELOPER</h4>
+		</div><!--d-flex-->
+	</div><!--profile--><br>
+
+<!--<p id="demo" style="color:white"></p>
+<script>
+	$(function(){
+		$(window).resize(function(){
+			var width=$(window).width();
+			
+			var height=$(window).height();
+			$("#demo").html(width);
+		});
+
+	});
+</script>-->
+
+<div class="container">
+	<div class="d-flex flex-column align-items-center text-light">
+		<h2 id="aboutHead">About Me</h2>
+		<p style="color:#ffac41">Professional Profile - There is All About Me</p>
+		<div class="d-flex">
+			<div class="round"></div>
+			<div class="round"></div>
+			<div class="round"></div>
+			<div class="round"></div>
+		</div><!--d-flex-->
+	</div><!--flex flex-column-->
+</div><!--container-->
+
+<div class="container mt-4 mb-5 pt-1 pb-1" id="aboutProfileBigScreen" style="box-shadow:0px 0px 20px 1px #ffac41" >
+	<div class="media  p-2">
+		<a href="#pfInfo"><img src="Me4.jpg" class="rounded mr-3" style="border-left:3.4px solid #ffac41;border-right:3.4px solid #ffac41;width:250px;height:425px"/></a>
+		<div class="media-body">
+			<h3 style="color:white"><span style="color:red">I'</span>m <span style="color:red">M</span>ohit <span style="color:red">K</span>umar</h3>
+			<p class="lead text-secondary">I am currently an undergrad CE student at IIIT Bhubaneswar. I would say I am a passionate programmer but still in making. I have tried building many front-end and back-end Projects. Being a learner myself, I have been through so many resources and many online courses while learning something new about this passionating Web Development. I have gained knowledge about topics like HTML, CSS, JAVASCRIPT, JQUERY, BOOTSTRAP, PHP and MYSQL. I put in my best efforts in bringing together all those resources I've been through while learning a particular topic and building websites right from the scratch.</p>
+			<div class="row" id="pfAbout">
+			<div class="col">
+				<div class="d-flex">
+					<i class="fas fa-calendar-alt" style="color:#ffac41"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Date of birth: </p>
+					<p class="text-muted">&nbsp;07 Oct, 2000</p>
+				</div><!--inner d-flex-->
+				<div class="d-flex">
+					<i class="fas fa-flag" style="color:#ff1e56"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Nationality: </p>
+					<p class="text-muted">&nbsp;Indian</p>
+				</div><!--inner d-flex-->
+				<div class="d-flex">
+					<i class="fa fa-language" style="color:#ffac41"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Spoken Languages: </p>
+					<p class="text-muted">&nbsp;English, Hindi, Odia</p>
+				</div><!--inner d-flex-->
+			</div><!--col-->
+			<div class="col">
+				<div class="d-flex">
+					<i class="fas fa-map-marker-alt" style="color:#ff1e56"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Address: </p>
+					<p class="text-muted">&nbsp;Bhubaneswar, Odisha</p>
+				</div><!--inner d-flex-->
+				<div class="d-flex">
+					<i class="fas fa-envelope-open-text" style="color:#ffac41"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Email: </p>
+					<p class="text-muted">&nbsp;webD@Developer.com</p>
+				</div><!--inner d-flex-->
+				<div class="d-flex">
+					<i class="fas fa-phone-volume" style="color:#ff1e56"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Phone: </p>
+					<p class="text-muted">&nbsp;9012156398</p>
+				</div><!--inner d-flex-->
+			</div><!--col-->
+		</div><!--row-->
+		</div><!--media-body-->
+	</div><!--media-->
+</div><!--container-->
+
+
+<div class="container mt-2 mb-5 pt-3" id="aboutProfileSmallScreen" style="box-shadow:0px 0px 20px 5px">
+	<div class="d-flex flex-column align-items-center">
+		<img src="Me4.jpg" id="pfImage" class="rounded mr-2 mb-2" style="border-left:3.8px solid #ffac41;border-right:3.4px solid #ffac41;width:305px;height:460px"/>
+		<h3 style="color:white"><span style="color:red">I'</span>m <span style="color:red">M</span>ohit <span style="color:red">K</span>umar</h3>
+		<p class=" text-secondary">I am currently an undergrad CE student at IIIT Bhubaneswar. I would say I am a passionate programmer but still in making.I have tried building many front-end and back-end Projects. Being a learner myself, I have been through so many resources and many online courses while learning something new about this passionating Web Development.I have gained knowledge about topics like HTML, CSS, JAVASCRIPT, JQUERY, BOOTSTRAP, PHP and MYSQL. I put in my best efforts in bringing together all those resources I've been through while learning a particular topic and building websites right from the scratch.</p>
+		
+		<div class="row" id="pfAbout">
+			<div class="col">
+				<div class="d-flex">
+					<i class="fas fa-calendar-alt" style="color:#ffac41"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Date of birth: </p>
+					<p class="text-muted">&nbsp;07 Oct, 2000</p>
+				</div><!--inner d-flex-->
+				<div class="d-flex">
+					<i class="fas fa-flag" style="color:#ff1e56"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Nationality: </p>
+					<p class="text-muted">&nbsp;Indian</p>
+				</div><!--inner d-flex-->
+				<div class="d-flex">
+					<i class="fa fa-language" style="color:#ffac41"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Spoken Languages: </p>
+					<p class="text-muted">&nbsp;English, Hindi, Odia</p>
+				</div><!--inner d-flex-->
+			</div><!--col-->
+			<div class="col">
+				<div class="d-flex">
+					<i class="fas fa-map-marker-alt" style="color:#ff1e56"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Address: </p>
+					<p class="text-muted">&nbsp;Bhubaneswar, Odisha</p>
+				</div><!--inner d-flex-->
+				<div class="d-flex">
+					<i class="fas fa-envelope-open-text" style="color:#ffac41"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Email: </p>
+					<p class="text-muted">&nbsp;webD@Developer.com</p>
+				</div><!--inner d-flex-->
+				<div class="d-flex">
+					<i class="fas fa-phone-volume" style="color:#ff1e56"></i>
+					<p class="ml-1 font-weight-bold" style="color:lightgrey">Phone: </p>
+					<p class="text-muted">&nbsp;9012156398</p>
+				</div><!--inner d-flex-->
+			</div><!--col-->
+		</div><!--row-->
+
+	</div><!--flex-column-->
+</div><!--container-->
+
+<!--SCRIPT FOR EFFECTS ON HOVERING THE IMAGE ON SCREEN SIZE GREATER THAN 500PX AND LESS THAN 994PX -->
+<script>
+	var width=window.innerWidth;
+	if(width>=500 && width <=869)
+	{
+		document.getElementById("pfImage").onmouseover=function()
+		{
+			this.style.width='335px';
+			this.style.height='485px';
+			this.style.transitionDuration='0.4s';
+		}
+		document.getElementById("pfImage").onmouseout=function()
+		{
+			this.style.width='305px';
+			this.style.height='460px';
+			this.style.transitionDuration='0.4s';
+		}
+	}
+</script>
+
+<div class="container mb-4" id="pfService">
+	<div class="d-flex flex-column align-items-center" id="pfInfo">
+		<div class='d-flex'>
+			<h2 class="display-4 text-warning" style="font-family: 'Berkshire Swash', cursive;text-decoration: overline underline">Key Skills</h2>
+			<i class="fa fa-book cardicon" style="font-size:48px;margin-left:14px;position:relative;top:9px;color:#f70929"></i>
+		</div><!--inner d-flex-->
+		
+				<div class="card-deck mb-4">
+					<div class="card " style="background:url('blackTexture.jpeg');background-size: 218%;">
+						<div class="card-body pl-4 text-light ">
+							<i class="fas fa-laptop-code cardicon" style="position:relative;top:-46px;left:50%;transform:translateX(-50%);font-size:58px"></i>
+							<h3 class="card-head">Frontend</h3>
+								<div class="d-flex flex-column">
+									<p class="card-text">HTML</p>
+									<p class="card-text">CSS</p>
+									<p class="card-text">JAVASCRIPT</p>
+									<p class="card-text">JQUERY</p>
+									<p class="card-text">BOOTSTRAP</p>
+								</div><!--inner felx column-->
+						</div><!--card body-->
+					</div><!--card-->
+
+					<div class="card" style="background:url('blackTexture.jpeg');background-size: 218%">
+						<div class="card-body text-light pl-4 ">
+							<i class="fa fa-server cardicon" style="position:relative;top:-46px;left:50%;transform:translateX(-50%);font-size:48px"></i>
+							<h3 class="card-head">Backend</h3>
+								<div class="d-flex flex-column">
+									<p class="card-text">PHP</p>
+									<p class="card-text">MYSQL</p>
+									<p class="card-text">Python (Basic)</p>
+								</div><!--inner flex column-->
+						</div><!--card body-->
+					</div><!--card-->
+			
+					<div class="card" style="background:url('blackTexture.jpeg');background-size: 218%">
+						<div class="card-body text-white pl-4">
+							<i class="fa fa-tasks cardicon" style="position:relative;top:-47px;left:50%;transform:translateX(-50%);font-size:55px"></i>
+							<h3 class="card-head">Other</h3>
+								<div class="d-flex flex-column">
+									<p class="card-text">C</p>
+									<p class="card-text">C++</p>
+									<p class="card-text">Java</p>
+								</div><!--inner felx column-->
+						</div><!--card body-->
+					</div><!--card-->
+				</div><!--card deck-->
+			
+	</div><!--flex-column-->
+</div><!--container-->
+
+
+
+<div class="jumbotron-fluid bg-warning" id="pfContact">
+	<div class="d-flex flex-column align-items-center mt-1">
+		<h3 class="text-dark">Connect Me at</h3>
+		<div class="d-flex mb-2">
+			<a href="#"><i class="fab fa-facebook connectIcon" style="color:#4267B2" onmouseenter="this.style.color='#043699'" onmouseleave="this.style.color='#4267B2'"></i></a>
+			<a href="#"><i class="fab fa-instagram connectIcon ml-2" style="color:#ED6D4A" onmouseenter="this.style.color='#f75109'" onmouseleave="this.style.color='#ED6D4A'"></i></a>
+			<a href="#"><i class="fab fa-twitter connectIcon ml-2" style="color:#2CA5DB" onmouseenter="this.style.color='#277a9e'" onmouseleave="this.style.color='#0095d6'"></i></a>
+			<a href="#"><i class="fab fa-linkedin-in connectIcon ml-2" style="color:#0174B0" onmouseenter="this.style.color='#06496b'" onmouseleave="this.style.color='#017480'"></i></a>
+		</div><!--inner flex-->
+	</div><!--flex=column-->
+</div><!--jumbotron-fluid-->
+
+
+</body>
+</html>
+
+<!--
+
+Color Pallete
+#000000 black
+#323232 grey type
+#ff1e56 red type
+#ffac41 orange type
+
+-->	
+<!--
+	fa fa-bars
+	fas fa-database
+	far fa-desktop
+	fa fa-code
+	fa fa-server
+	fa fa-tasks
+-->
